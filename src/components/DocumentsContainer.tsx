@@ -14,10 +14,10 @@ const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
         {documents.map((document, index) => (
             <IonItem>
             <IonCard>
-            <IonThumbnail slot="start">
-            <IonImg src="/../../resources/logo-aadhaar.png" />
-            </IonThumbnail>
             <IonCardHeader>
+            <IonThumbnail slot="start">
+            <img src='logo-aadhaar.png' />
+            </IonThumbnail>
             <IonCardSubtitle>{document.type.toUpperCase()}</IonCardSubtitle>
             <IonCardTitle>{document.entity.name}</IonCardTitle>
             </IonCardHeader>
