@@ -1,5 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import EntityContainer from '../components/EntityContainer';
 import ExploreContainer from '../components/ExploreContainer';
+import { EntityModel, EntityType } from '../models/EntityModel';
+import { EntityService } from '../providers/EntityService';
 import './Tab3.css';
 
 const Tab3: React.FC = () => {
@@ -7,7 +10,7 @@ const Tab3: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Settings</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -16,7 +19,11 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <EntityContainer entities={ new Array(
+      new EntityModel("1","Mayank",EntityType.Person),
+      new EntityModel("2","Mayank",EntityType.Person)
+  )
+  }/>
       </IonContent>
     </IonPage>
   );
