@@ -1,22 +1,34 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonListHeader, IonList, IonItem, IonLabel} from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
+
+const DocsList: React.FC = () => {
+  return (
+    <IonContent>
+      <IonList>
+        <IonListHeader>
+          Mayank
+        </IonListHeader>
+        <IonItem>
+          <IonLabel>
+            Aadhar Card
+          </IonLabel>
+        </IonItem>
+      </IonList>
+    </IonContent>
+  )
+}
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Documents</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <DocsList />
       </IonContent>
     </IonPage>
   );
