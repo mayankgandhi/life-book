@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonNav, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { EntityModel } from '../models/EntityModel';
 
 interface EntityContainerProps {
@@ -7,14 +7,16 @@ interface EntityContainerProps {
 
 const EntityContainer: React.FC<EntityContainerProps> = ({ entities }) => {
   return (
-   <IonContent>
+   <IonContent fullscreen>
     <IonListHeader>
       <IonLabel>Entities</IonLabel>
     </IonListHeader>
+   
+    
        {/* List of Entities */}
        {entities.map((entity, index) => (
-           <IonItem>
-               <IonLabel>
+           <IonItem button onClick={()=> { console.log("name")}}>
+               <IonLabel >
                    <h2>{entity.name}</h2> 
                     <p>{entity.type}</p>
                </IonLabel>

@@ -1,23 +1,11 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonListHeader, IonList, IonItem, IonLabel} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonListHeader, IonList, IonItem, IonLabel, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle} from '@ionic/react';
+import React from 'react';
+import DocumentContainer from '../components/DocumentsContainer';
 import ExploreContainer from '../components/ExploreContainer';
+import { DocType, DocumentModel } from '../models/DocumentModel';
+import { EntityModel, EntityType } from '../models/EntityModel';
 import './Tab1.css';
 
-const DocsList: React.FC = () => {
-  return (
-    <IonContent>
-      <IonList>
-        <IonListHeader>
-          Mayank
-        </IonListHeader>
-        <IonItem>
-          <IonLabel>
-            Aadhar Card
-          </IonLabel>
-        </IonItem>
-      </IonList>
-    </IonContent>
-  )
-}
 
 const Tab1: React.FC = () => {
   return (
@@ -28,7 +16,12 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <DocsList />
+        <DocumentContainer documents={
+          new Array(
+            new DocumentModel("this", new EntityModel("a","aasd",EntityType.Home), DocType.aadhaar),
+            new DocumentModel("athis", new EntityModel("a","aasd",EntityType.Home), DocType.aadhaar)
+            )
+        } />
       </IonContent>
     </IonPage>
   );
