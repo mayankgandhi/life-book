@@ -5,8 +5,8 @@ export enum EntityType{
     Business="Business"
 }
 
-export interface EntityModel {
-         id: string, 
+export interface Entity {
+         id: number, 
          name: string, 
          type: EntityType
 }

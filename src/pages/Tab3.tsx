@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonFab, IonFabButton
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
 import EntityContainer from '../components/EntityContainer';
 import ExploreContainer from '../components/ExploreContainer';
-import { EntityModel, EntityType } from '../models/EntityModel';
+import { Entity, EntityType } from '../models/Entity';
 import { EntityService } from '../providers/EntityService';
 import './Tab3.css';
 import { addCircleOutline } from 'ionicons/icons';
@@ -28,10 +28,7 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <EntityContainer entities={ new Array(
-      new EntityModel("1","Mayank",EntityType.Person),
-      new EntityModel("2","Mayank",EntityType.Person)
-  )
+        <EntityContainer entities={ new Array()
   }/>
       </IonContent>
     </IonPage>

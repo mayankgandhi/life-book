@@ -1,11 +1,11 @@
 import { IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonNav, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { canConstructResponseFromBodyStream } from 'workbox-core/_private';
-import { EntityModel } from '../models/EntityModel';
+import { Entity } from '../models/Entity';
 import { inject, injectable } from '../../node_modules/inversify';
 
 
 interface EntityContainerProps {
-  entities: EntityModel[];
+  entities: Entity[];
 }
 
 const EntityContainer: React.FC<EntityContainerProps> = ({ entities }) => {

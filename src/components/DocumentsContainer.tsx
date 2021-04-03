@@ -1,10 +1,10 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonImg, IonItem, IonItemSliding, IonLabel, IonList, IonListHeader, IonNav, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import { image } from 'ionicons/icons';
 import React from 'react';
-import { DocumentModel } from '../models/DocumentModel';
+import { Document } from '../models/Document';
 
 interface DocumentContainerProps {
-    documents: DocumentModel[];
+    documents: Document[];
 }
 
 const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
