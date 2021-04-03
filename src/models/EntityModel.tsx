@@ -5,10 +5,8 @@ export enum EntityType{
     Business="Business"
 }
 
-export class EntityModel {
-    constructor(
-        public _id: string, 
-        public name: string, 
-        public type: EntityType
-    ) {}
+export interface EntityModel {
+         id: string, 
+         name: string, 
+         type: EntityType
 }
