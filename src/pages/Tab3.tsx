@@ -7,6 +7,7 @@ import { Entity, EntityType } from '../models/Entity';
 import { EntityService } from '../providers/EntityService';
 import './Tab3.css';
 import { addCircleOutline } from 'ionicons/icons';
+import EntityView from '../components/EntityView';
 
 
 const Tab3: React.FC = () => {
@@ -28,8 +29,7 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <EntityContainer entities={ new Array()
-  }/>
+        <EntityView />
       </IonContent>
     </IonPage>
   );

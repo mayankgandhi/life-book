@@ -1,31 +1,24 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonImg, IonItem, IonItemSliding, IonLabel, IonList, IonListHeader, IonNav, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import { image } from 'ionicons/icons';
 import React from 'react';
-import { Document } from '../models/Document';
+import { DocumentModel } from '../models/Document';
 
 interface DocumentContainerProps {
-    documents: Document[];
+    documents: DocumentModel[];
 }
 
 const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
     return (
         <IonContent fullscreen>
         {/* List of Documents */}
-        {documents.map((document, index) => (
-            <IonItem>
+        { documents.map((document: DocumentModel) => (
             <IonCard>
+            <img src={document.doc1ID} />
             <IonCardHeader>
-            <IonThumbnail slot="start">
-            <img src='logo-aadhaar.png' />
-            </IonThumbnail>
             <IonCardSubtitle>{document.type.toUpperCase()}</IonCardSubtitle>
-            <IonCardTitle>{document.entity.name}</IonCardTitle>
+            <IonCardTitle>{document.name}</IonCardTitle>
             </IonCardHeader>
-            <IonCardContent>
-            This is a document
-            </IonCardContent>
             </IonCard>
-            </IonItem>
             ))
         }
         </IonContent>
@@ -33,4 +26,3 @@ const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
     };
     
     export default DocumentContainer;
-    

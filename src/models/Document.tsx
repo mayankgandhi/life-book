@@ -1,11 +1,15 @@
-import { Entity } from "./Entity";
+import { Entity, EntityType } from "./Entity";
 
 export enum DocType{
-    aadhaar = "Aadhaar"
+    aadhaar = "AADHAAR"
 }
 
-export interface Document {
-         id: number, 
-         entity: Entity, 
-         type: DocType
+export interface DocumentModel {
+         id: string, 
+         name: string, 
+         type: string,
+         doc1ID: string, 
+         doc2ID: string
+
 }
+

@@ -6,7 +6,7 @@ export enum EntityType{
 }
 
 export interface Entity {
-         id: number, 
+         id: string, 
          name: string, 
-         type: EntityType
+         type: string
 }
