@@ -3,13 +3,15 @@ import { image } from 'ionicons/icons';
 import React from 'react';
 import { DocumentModel } from '../models/Document';
 
-interface DocumentContainerProps {
+interface DocumentSectionProps {
+    name: string
     documents: DocumentModel[];
 }
 
-const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
+const DocumentSection: React.FC<DocumentSectionProps> = ({name, documents }) => {
     return (
-        <IonContent fullscreen>
+        <IonContent>
+        <h1>{name}</h1>
         {/* List of Documents */}
         { documents.map((document: DocumentModel) => (
             <IonCard>
@@ -19,10 +21,9 @@ const DocumentContainer: React.FC<DocumentContainerProps> = ({ documents }) => {
             <IonCardTitle>{document.name}</IonCardTitle>
             </IonCardHeader>
             </IonCard>
-            ))
-        }
+            )) }
         </IonContent>
         );
     };
     
-    export default DocumentContainer;
+    export default DocumentSection;

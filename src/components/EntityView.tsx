@@ -2,7 +2,6 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, 
 import firebase from './Firebase';
 import React from 'react';   
 import { DocType, DocumentModel } from '../models/Document';
-import DocumentContainer from './DocumentsContainer';
 import { Entity, EntityType } from '../models/Entity';
 import EntityContainer from './EntityContainer';
 
@@ -11,6 +10,9 @@ class EntityView extends React.Component<{}, {entities: Entity[]}> {
     constructor(props: string) {
         super(props)
         this.state = { entities: new Array() }
+    }
+    
+    componentDidMount() {
         this.fetchEntities()
     }
     

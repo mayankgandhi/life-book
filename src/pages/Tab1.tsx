@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonListHeader, IonList, IonItem, IonLabel, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle} from '@ionic/react';
 import React from 'react';
-import DocumentContainer from '../components/DocumentsContainer';
+import DocumentContainer from '../components/DocumentSection';
 import DocumentView from '../components/DocumentView';
 import ExploreContainer from '../components/ExploreContainer';
 import { DocType, DocumentModel } from '../models/Document';
