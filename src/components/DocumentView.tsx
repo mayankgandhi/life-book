@@ -5,13 +5,18 @@ import { DocumentModel } from '../models/Document';
 import * as Collections from 'typescript-collections';
 import DocumentSection from './DocumentSection';
 
-class DocumentView extends React.Component<{},{documentsRecord:  DocumentModel[]}> {
+interface DocumentViewProps {
+    name: string
+    documents: DocumentModel[];
+}
+
+class DocumentView extends React.Component<{},{documentsRecord:  DocumentViewProps[]}> {
     
-    documentsRecord: DocumentModel[]
+    documentsRecord: DocumentViewProps[]
 
     constructor(props: string) {
         super(props)
-        this.documentsRecord = new Array(); 
+        this.documentsRecord = new Array()
         this.state = { documentsRecord: this.documentsRecord }
     }
     
@@ -45,18 +50,31 @@ class DocumentView extends React.Component<{},{documentsRecord:  DocumentModel[]
                 }
                 documents.push(document)
             })
-            this.documentsRecord.concat(documents)
-            console.log(documents)
-            this.setState({
-                documentsRecord: documents
-            })
+            if (documents.length > 0) {
+                this.addDocumentRecord(name, documents)
+            }
         });
+    }
+
+    addDocumentRecord(name: string, documents: DocumentModel[]) {
+        let entityDocuments: DocumentViewProps = {
+            name: name,
+            documents: documents
+        }
+        this.state.documentsRecord.push(entityDocuments)
+        let record = this.state.documentsRecord
+        this.setState({
+            documentsRecord: record
+        })
     }
     
     render() {
         return (
             <IonContent>
-            <DocumentSection name = "Mayank Gandhi" documents = { this.state.documentsRecord}/>
+                    {this.state.documentsRecord.map( (record: DocumentViewProps, index) => {
+                        return <DocumentSection name={record.name} documents={record.documents}/>
+                    } )}
+                <DocumentSection name="Mayank" documents={new Array()}/>
             </IonContent>
             );
         }

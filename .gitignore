@@ -26,3 +26,6 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+#secret Firebase stuff
+/Users/mayankgandhi/Projects/IonicProjects/life-book/src/components/Firebase.tsx
